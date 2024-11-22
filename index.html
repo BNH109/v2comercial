@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+                display: block;
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+            }
+            .container {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 20px;
+                background-color: #ffffff;
+                border: 3px solid #004085;
+                border-radius: 10px;
+                box-shadow: none;
+            }
+            .form-section h2 {
+                background-color: #004085;
+                color: #ffffff;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 18px;
+                text-align: center;
+                border: 1px solid #004085;
+            }
+            .header img {
+                max-width: 100px;
+                margin-bottom: 20px;
+            }
+            .button-container {
+                display: none;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f6fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: #ffffff;
+            border: 3px solid #004085;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 120px;
+            height: auto;
+        }
+        .form-section {
+            width: 90%;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #004085;
+            border-radius: 10px;
+            background-color: #e9f1fc;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-section h2 {
+            background-color: #004085;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #004085;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .product-table th, .product-table td {
+            border: 1px solid #004085;
+            text-align: left;
+            padding: 8px;
+        }
+        .product-table th {
+            background-color: #004085;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+        }
+        .product-table td input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product-table td button {
+            padding: 5px 10px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .product-table td button:hover {
+            background-color: #c9302c;
+        }
+        .product-table td button i {
+            font-style: normal;
+            font-size: 14px;
+        }
+        .button-container {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .button-container button {
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 5px;
+            color: #ffffff;
+            background-color: #004085;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .total-section {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 16px;
+            font-weight: bold;
+            color: #004085;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            border: 1px solid #004085;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="C:\logo\imagem1.png" alt="Logo">
+        </div>
+        <div class="form-section">
+            <h2>Dados do Cliente</h2>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="NOME" required>
+            </div>
+            <div class="form-group">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" id="cnpj" placeholder="CNPJ" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" placeholder="ENDEREÇO" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" placeholder="CIDADE" required>
+                </div>
+                <div class="form-group">
+                    <label for="UF">UF</label>
+                    <input type="text" id="uf" placeholder="UF" maxlength="2" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="TELEFONE">Telefone</label>
+                    <input type="text" id="telefone" placeholder="TELEFONE" required>
+                </div>
+                <div class="form-group">
+                    <label for="celular">Celular</label>
+                    <input type="text" id="celular" placeholder="CELULAR" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
+            <h2>Produtos</h2>
+            <table class="product-table" id="productTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Descrição</th>
+                        <th>Qtd</th>
+                        <th>Valor Unitário</th>
+                        <th>Valor Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" maxlength="2" placeholder="00"></td>
+                        <td><input type="text" maxlength="100" placeholder="Descrição do produto"></td>
+                        <td><input type="number" maxlength="4" placeholder="Qtd" onchange="updateRowTotal(this)"></td>
+                        <td><input type="number" maxlength="10" placeholder="R$ 0,00" onchange="updateRowTotal(this)"></td>
+                        <td><input type="text" maxlength="10" placeholder="R$ 0,00" readonly></td>
+                        <td><button onclick="deleteRow(this)"><i class="fa fa-trash"></i> Excluir</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="button-container">
+                <button onclick="addRow()">Adicionar Item</button>
+            </div>
+        </div>
+        <div class="total-section" id="totalSection">
+            Total da Proposta: R$ 0,00
+        </div>
+    </div>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td><input type="text" maxlength="2" placeholder="00"></td>
+                <td><input type="text" maxlength="100" placeholder="Descrição do produto"></td>
+                <td><input type="number" maxlength="4" placeholder="Qtd" onchange="updateRowTotal(this)"></td>
+                <td><input type="number" maxlength="10" placeholder="R$ 0,00" onchange="updateRowTotal(this)"></td>
+                <td><input type="text" maxlength="10" placeholder="R$ 0,00" readonly></td>
+                <td><button onclick="deleteRow(this)"><i class="fa fa-trash"></i> Excluir</button></td>
+            `;
+        }
+
+        function deleteRow(button) {
+            const row = button.parentElement.parentElement;
+            row.remove();
+            updateTotal();
+        }
+
+        function updateRowTotal(element) {
+            const row = element.parentElement.parentElement;
+            const qtd = row.cells[2].querySelector('input').value;
+            const unit = row.cells[3].querySelector('input').value;
+            const totalCell = row.cells[4].querySelector('input');
+            const total = (parseFloat(qtd) || 0) * (parseFloat(unit) || 0);
+            totalCell.value = total.toFixed(2);
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const rows = document.querySelectorAll('#productTable tbody tr');
+            let total = 0;
+            rows.forEach(row => {
+                const totalCell = row.cells[4].querySelector('input').value;
+                total += parseFloat(totalCell) || 0;
+            });
+            document.getElementById('totalSection').innerText = `Total da Proposta: R$ ${total.toFixed(2)}`;
+        }
+    </script>
+
+    <!-- Adicione o Font Awesome para os ícones -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
